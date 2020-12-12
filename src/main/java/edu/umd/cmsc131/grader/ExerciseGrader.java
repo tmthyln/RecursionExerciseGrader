@@ -48,7 +48,7 @@ public class ExerciseGrader {
         files.forEach((dirId, file) -> {
             try {
                 var fieldCheck = new StaticFieldCheck(file, true);
-                var score = fieldCheck.hasStaticFields() ? 0 : 20;
+                var score = fieldCheck.hasStaticFields() ? -20 : 0;
                 scores.put(dirId, score);
             } catch (IOException ex) {
                 System.err.println("Error reading exercise file for " + dirId);
